@@ -1,65 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b1020">
-<title>汽車貸款試算｜AUTO LOAN</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101114">
+<title>CAR STUDIO PRO｜汽車照片專業調色工作室</title>
 <style>
-:root{color-scheme:dark;--bg:#090e1b;--panel:#121a2b;--panel2:#182338;--line:#293650;--muted:#9aa8bf;--text:#f3f6fc;--gold:#d8b46a;--green:#63d6a1;--red:#ff8585}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#1b2b49 0,transparent 42%),var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Noto Sans TC",sans-serif}
-.wrap{max-width:1040px;margin:auto;padding:28px 18px 60px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}.brand{font-weight:850;letter-spacing:2px}.brand span{color:var(--gold)}.pill{border:1px solid #38614f;color:var(--green);padding:5px 11px;border-radius:99px;font-size:12px}
-h1{font-size:clamp(28px,5vw,42px);line-height:1.2;margin:8px 0}.sub{color:var(--muted);margin:0 0 25px}.layout{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}.card{background:linear-gradient(160deg,#151f33,#101827);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 16px 45px #0004}.card h2{font-size:18px;margin:0 0 18px}.field{margin:14px 0}.field label{display:block;color:#c5d0e1;font-size:14px;margin-bottom:7px}.inputrow{display:flex;align-items:center;background:#0c1423;border:1px solid #30405d;border-radius:11px;padding:0 12px}.inputrow:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px #d8b46a20}.inputrow input{width:100%;background:transparent;border:0;outline:0;color:white;font-size:17px;padding:13px 4px;min-width:0}.unit{color:var(--muted);font-size:13px;white-space:nowrap}.hint{font-size:12px;color:var(--muted);margin-top:5px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.seg button,.mode button{background:#0c1423;border:1px solid #30405d;color:#c7d2e4;padding:10px 4px;border-radius:9px;cursor:pointer}.seg button.active,.mode button.active{border-color:var(--gold);background:#3a3020;color:#ffe0a0}.mode{display:flex;gap:8px;margin-bottom:16px}.mode button{flex:1}.primary{width:100%;border:0;border-radius:12px;padding:14px;background:linear-gradient(100deg,#b88e45,#e4c47e);color:#17130b;font-weight:800;font-size:16px;cursor:pointer;margin-top:10px}.secondary{background:#202c41;color:#e4ebf7;border:1px solid #354762;border-radius:10px;padding:10px 14px;cursor:pointer}.loanbox{background:#0b1423;border:1px solid #2c3b56;border-radius:14px;padding:15px;margin:15px 0}.loanbox small,.metric small{color:var(--muted);display:block}.loanbox strong{font-size:27px;color:var(--green)}.resultHero{text-align:center;padding:20px 10px;background:linear-gradient(140deg,#1e2d43,#142033);border:1px solid #34445f;border-radius:15px;margin-bottom:14px}.resultHero small{color:#b4c1d5}.rate{font-size:42px;font-weight:850;color:var(--gold);line-height:1.25}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric{padding:13px;background:#0c1423;border:1px solid #263650;border-radius:12px}.metric strong{font-size:19px;display:block;margin-top:4px}.note{font-size:12px;color:var(--muted);margin-top:15px}.error{color:var(--red);font-size:13px;margin-top:10px;min-height:20px}.actions{display:flex;gap:8px;margin-top:15px;flex-wrap:wrap}.footer{text-align:center;color:#72819a;font-size:12px;margin-top:24px}
-@media(max-width:760px){.layout{grid-template-columns:1fr}.wrap{padding:20px 13px 40px}.card{padding:17px}.top{margin-bottom:20px}.seg{grid-template-columns:repeat(4,1fr)}}
-</style></head>
-<body><main class="wrap">
-<header class="top"><div class="brand">AUTO <span>LOAN</span>　／　汽車貸款試算</div><div class="pill">免費使用・免登入</div></header>
-<h1>把貸款條件，<span style="color:var(--gold)">算得清清楚楚。</span></h1>
-<p class="sub">輸入車價、頭期款與貸款條件，即時試算月付金或反推年利率。</p>
+:root{--bg:#101114;--panel:#191b20;--panel2:#22252c;--line:#30343d;--text:#f3f5f8;--muted:#9ba2ae;--gold:#d7b477;--gold2:#f0d5a5;--green:#8dc6a3}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#292b31 0,#101114 58%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif}
+button,input{font:inherit}button{cursor:pointer}.top{height:68px;border-bottom:1px solid #292c33;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(15px,4vw,55px);position:sticky;top:0;background:#111216ed;backdrop-filter:blur(18px);z-index:10}
+.brand{display:flex;gap:11px;align-items:center;font-weight:850;letter-spacing:.14em}.logo{width:34px;height:34px;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;border-radius:9px}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:.2em;margin-top:3px}.topnote{font-size:11px;color:var(--muted)}
+.wrap{max-width:1500px;margin:auto;padding:28px clamp(13px,3vw,40px) 50px}.hero{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:22px}.eyebrow{font-size:10px;color:var(--gold);letter-spacing:.22em;font-weight:800}.hero h1{font-size:clamp(25px,4vw,38px);margin:8px 0 6px}.hero p{font-size:13px;color:var(--muted);margin:0;line-height:1.7}.privacy{border:1px solid var(--line);border-radius:99px;padding:9px 13px;color:#c4c9d1;font-size:10px;white-space:nowrap}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:17px;align-items:start}.panel{background:linear-gradient(160deg,#1b1d23,#17191e);border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 15px 45px #0003}.head{padding:15px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}.head strong{font-size:12px;letter-spacing:.06em}.muted{color:var(--muted);font-size:10px}.pad{padding:16px}
+.btn{border:1px solid var(--line);border-radius:8px;padding:10px 13px;background:#252830;color:var(--text);font-size:11px;font-weight:700}.btn.gold{background:linear-gradient(135deg,#e5c58f,#b78d4d);color:#17130d;border:0}.btn:disabled{opacity:.4;cursor:not-allowed}.btn:hover:not(:disabled){filter:brightness(1.12)}
+.upload{border:1px dashed #555b67;border-radius:12px;min-height:180px;display:grid;place-items:center;text-align:center;padding:25px;background:linear-gradient(145deg,#202229,#17191e)}.upload.drag{border-color:var(--gold);background:#28251f}.upload h2{font-size:16px;margin:0 0 7px}.upload p{font-size:11px;color:var(--muted);line-height:1.7;margin:0 0 14px}.uploadIcon{font-size:27px;color:var(--gold);margin-bottom:10px}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:14px 0 10px;flex-wrap:wrap}.toolbar-left,.toolbar-right{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.count{font-size:11px;color:var(--muted)}.count b{color:var(--gold2);font-variant-numeric:tabular-nums}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:10px}.photoBox{background:#08090b;border:1px solid #292d35;border-radius:10px;overflow:hidden;min-width:0}.photoTitle{padding:9px 11px;background:#17191e;display:flex;justify-content:space-between;font-size:10px;color:#d9dde4}.photoTitle span:last-child{color:var(--muted)}.photoBox canvas{display:block;width:100%;height:auto;max-height:65vh;object-fit:contain;background:#08090b}.photoEmpty{height:240px;display:grid;place-items:center;color:#606875;font-size:11px}
+.gallery{display:flex;gap:8px;overflow-x:auto;padding:12px 1px 2px}.thumb{width:76px;flex:0 0 76px;border:1px solid var(--line);border-radius:8px;background:#101216;color:var(--muted);padding:4px;text-align:left}.thumb.active{border:2px solid var(--gold);padding:3px}.thumb img{width:100%;height:48px;object-fit:cover;border-radius:4px;display:block}.thumb small{display:block;font-size:9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:5px}
+.side{display:grid;gap:13px}.section{padding:15px}.section h3{font-size:11px;letter-spacing:.1em;margin:0 0 12px}.modegrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.mode{border:1px solid var(--line);border-radius:9px;padding:0;background:#20232a;color:var(--text);overflow:hidden;text-align:left}.mode.active{border-color:var(--gold);box-shadow:0 0 0 1px #d7b47740}.modeArt{height:55px;background:linear-gradient(135deg,#b5c0bd,#66736f 55%,#333d43)}.mode.studio .modeArt{background:radial-gradient(ellipse at 50% 20%,#6a707a,#292d35 58%,#090a0c)}.mode b{display:block;font-size:10px;padding:8px 8px 2px}.mode small{display:block;font-size:9px;color:var(--muted);padding:0 8px 8px}
+.presetGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.preset{border:1px solid var(--line);border-radius:8px;background:#20232a;color:#cbd0d8;padding:9px 4px;font-size:10px;min-height:38px}.preset.active{border-color:var(--gold);color:var(--gold2);background:#30291f}
+.control{margin:14px 0}.controltop{display:flex;justify-content:space-between;font-size:10px;color:#d8dce3;margin-bottom:7px}.control output{color:var(--gold2);font-variant-numeric:tabular-nums}.control input{width:100%;accent-color:var(--gold)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.full{width:100%}.hint{font-size:9px;color:var(--muted);line-height:1.65;margin:10px 0 0}.batchbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.batchbar .btn{flex:1}
+.progress{height:5px;background:#30343d;border-radius:9px;overflow:hidden;margin-top:10px;display:none}.progress>div{height:100%;width:0;background:linear-gradient(90deg,#b78d4d,#f0d5a5);transition:width .15s}.status{font-size:10px;color:var(--muted);margin-top:7px;min-height:14px}
+.footer{text-align:center;color:#707783;font-size:10px;line-height:1.8;margin-top:22px}.hidden{display:none!important}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#eee2ce;color:#17130d;padding:10px 15px;border-radius:8px;font-size:11px;font-weight:800;z-index:30;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1}
+@media(max-width:950px){.layout{grid-template-columns:1fr}.side{grid-template-columns:1fr 1fr}.side .panel:last-child{grid-column:1/-1}}
+@media(max-width:600px){.top{height:59px}.topnote{display:none}.wrap{padding-top:20px}.hero{display:block}.privacy{display:inline-block;margin-top:12px}.side{grid-template-columns:1fr}.side .panel:last-child{grid-column:auto}.pad{padding:11px}.compare{gap:6px}.photoTitle{font-size:9px;padding:8px 7px}.photoBox canvas{max-height:46vh}.photoEmpty{height:180px}.upload{min-height:155px}.toolbar{align-items:flex-start}}
+</style>
+</head>
+<body>
+<header class="top"><div class="brand"><div class="logo">C</div><div>CAR STUDIO PRO<small>AUTOMOTIVE PHOTO LAB</small></div></div><div class="topnote">BATCH EDITION　·　LOCAL PROCESSING</div></header>
+<main class="wrap">
+<section class="hero"><div><div class="eyebrow">PROFESSIONAL AUTOMOTIVE COLOR WORKFLOW</div><h1>一批照片，統一呈現車商質感。</h1><p>最多 20 張照片批次調色、套用一致風格，左右比較並打包下載。</p></div><div class="privacy">⌁　照片只在你的裝置處理</div></section>
 <div class="layout">
-<section class="card"><h2>01　貸款條件</h2>
-<div class="field"><label for="price">車輛成交價格</label><div class="inputrow"><input id="price" type="number" min="1" value="800000"><span class="unit">元</span></div></div>
-<div class="field"><label for="down">頭期款</label><div class="inputrow"><input id="down" type="number" min="0" value="200000"><span class="unit">元</span></div></div>
-<div class="loanbox"><small>預估貸款本金（成交價－頭期款）</small><strong id="loanDisplay">600,000 元</strong></div>
-<div class="field"><label>貸款期數</label><div class="seg" id="terms"><button data-n="12">12期</button><button data-n="24">24期</button><button data-n="36">36期</button><button data-n="48" class="active">48期</button><button data-n="60">60期</button><button data-n="72">72期</button><button data-n="84">84期</button><button data-n="96">96期</button></div></div>
-<div class="mode"><button id="byRate" class="active">已知年利率 → 算月付</button><button id="byPayment">已知月付 → 反推利率</button></div>
-<div class="field" id="rateField"><label for="rate">年利率（名目）</label><div class="inputrow"><input id="rate" type="number" min="0" max="100" step=".01" value="5.5"><span class="unit">%</span></div></div>
-<div class="field" id="paymentField" hidden><label for="payment">每月月付金</label><div class="inputrow"><input id="payment" type="number" min="1" value="13955"><span class="unit">元／月</span></div></div>
-<div class="field"><label for="fee">額外費用（選填，撥款時扣除）</label><div class="inputrow"><input id="fee" type="number" min="0" value="0"><span class="unit">元</span></div><div class="hint">例如開辦費、設定費；用於估算實際年化成本。</div></div>
-<button class="primary" id="calculate">開始試算</button><div class="error" id="error"></div>
+<section class="panel">
+ <div class="head"><strong>01　照片工作區</strong><span class="muted" id="batchCount">尚未加入照片</span></div>
+ <div class="pad">
+  <div class="upload" id="drop"><div><div class="uploadIcon">＋</div><h2>拖曳照片到這裡</h2><p>一次最多 20 張｜支援 JPG、PNG、WebP<br>可分批新增，系統會保留目前照片清單。</p><button class="btn gold" id="pick">選取照片</button><input id="files" type="file" accept="image/*" multiple hidden></div></div>
+  <div class="toolbar"><div class="toolbar-left"><span class="count">目前選取：<b id="activeNo">—</b></span><button class="btn" id="add">＋ 新增</button><button class="btn" id="remove">移除目前</button><button class="btn" id="clear">清空全部</button></div><div class="toolbar-right"><span class="muted">左右對照</span></div></div>
+  <div class="compare">
+   <div class="photoBox"><div class="photoTitle"><span>原始照片</span><span id="originalSize">ORIGINAL</span></div><canvas id="before" class="hidden"></canvas><div class="photoEmpty" id="beforeEmpty">尚未載入照片</div></div>
+   <div class="photoBox"><div class="photoTitle"><span>調色成品</span><span id="outputSize">PREVIEW</span></div><canvas id="after" class="hidden"></canvas><div class="photoEmpty" id="afterEmpty">套用濾鏡後預覽</div></div>
+  </div>
+  <div class="gallery" id="gallery"></div>
+ </div>
 </section>
-<section class="card"><h2>02　試算結果</h2>
-<div class="resultHero"><small id="heroLabel">預估每月月付金</small><div class="rate" id="heroValue">—</div><small id="heroSub">依本息平均攤還估算</small></div>
-<div class="metrics">
-<div class="metric"><small>推算名目年利率</small><strong id="nominal">—</strong></div>
-<div class="metric"><small>有效年利率（含費用）</small><strong id="effective">—</strong></div>
-<div class="metric"><small>總繳款金額</small><strong id="total">—</strong></div>
-<div class="metric"><small>利息與費用成本</small><strong id="cost">—</strong></div>
-<div class="metric"><small>貸款本金</small><strong id="principal">—</strong></div>
-<div class="metric"><small>頭期款比例</small><strong id="downPct">—</strong></div>
+<aside class="side">
+ <section class="panel"><div class="head"><strong>02　場景方向</strong><span class="muted">色調設定</span></div><div class="section">
+  <div class="modegrid"><button class="mode active" data-mode="outdoor"><div class="modeArt"></div><b>高級住宅戶外</b><small>自然清透、綠植灰牆</small></button><button class="mode studio" data-mode="studio"><div class="modeArt"></div><b>專業汽車攝影棚</b><small>暗部層次、沉穩金屬</small></button></div>
+  <p class="hint">此功能調整原照片的色彩與明暗，不會實際替換背景或生成新場景。</p>
+ </div></section>
+ <section class="panel"><div class="head"><strong>03　車商專用色調</strong><span class="muted">一鍵套用</span></div><div class="section">
+  <div class="presetGrid" id="presets">
+   <button class="preset active" data-preset="showroom">展間高級灰</button><button class="preset" data-preset="luxury">豪華暖金</button><button class="preset" data-preset="clean">自然清透</button>
+   <button class="preset" data-preset="studio">棚拍深邃</button><button class="preset" data-preset="silver">銀灰金屬</button><button class="preset" data-preset="sport">運動鮮明</button>
+   <button class="preset" data-preset="film">電影膠片</button><button class="preset" data-preset="night">夜色質感</button><button class="preset" data-preset="bright">明亮展示</button>
+   <button class="preset" data-preset="white">白車專用</button><button class="preset" data-preset="black">黑車專用</button><button class="preset" data-preset="green">戶外植栽</button>
+  </div>
+  <p class="hint">點選任一色調，會同步套用到整批照片；可再使用下方滑桿微調。</p>
+ </div></section>
+ <section class="panel"><div class="head"><strong>04　全批次微調</strong><button class="btn" id="reset" style="padding:6px 9px">重設參數</button></div><div class="section">
+  <div class="control"><div class="controltop"><label for="brightness">亮度</label><output id="brightnessVal">103%</output></div><input id="brightness" type="range" min="60" max="145" value="103"></div>
+  <div class="control"><div class="controltop"><label for="contrast">對比</label><output id="contrastVal">112%</output></div><input id="contrast" type="range" min="60" max="165" value="112"></div>
+  <div class="control"><div class="controltop"><label for="saturation">飽和度</label><output id="saturationVal">100%</output></div><input id="saturation" type="range" min="0" max="180" value="100"></div>
+  <div class="control"><div class="controltop"><label for="warmth">色溫</label><output id="warmthVal">2</output></div><input id="warmth" type="range" min="-40" max="40" value="2"></div>
+  <div class="control"><div class="controltop"><label for="vignette">暗角</label><output id="vignetteVal">10%</output></div><input id="vignette" type="range" min="0" max="70" value="10"></div>
+  <div class="batchbar"><button class="btn" id="sync">↻ 套用至全部照片</button><button class="btn" id="downloadOne" disabled>下載目前照片</button></div>
+  <div class="progress" id="progress"><div id="progressFill"></div></div><div class="status" id="status">所有設定會套用於整批照片。</div>
+  <button class="btn gold full" id="downloadZip" disabled style="margin-top:10px">⇩　批次打包 ZIP 下載</button>
+  <p class="hint">ZIP 會包含所有照片的 JPG 成品。建議 20 張以內、單張照片不超過 20MB，以確保瀏覽器順暢。</p>
+ </div></section>
+</aside>
 </div>
-<div class="actions"><button class="secondary" id="copy">複製試算結果</button><button class="secondary" id="reset">重設欄位</button></div>
-<p class="note">計算假設：每月一期、固定利率、本息平均攤還。名目年利率＝月利率×12；有效年利率依每月現金流及撥款淨額估算。實際核貸利率、費用、還款方式及金額以金融機構契約為準。本工具僅供估算，不構成貸款承諾。</p>
-</section></div><div class="footer">AUTO LOAN CALCULATOR　·　汽車貸款試算工具</div></main>
+<div class="footer">CAR STUDIO PRO · AUTOMOTIVE PHOTO LAB<br>本機 Canvas 影像處理｜不會上傳、儲存或分享你的原始照片</div>
+</main>
+<div class="toast" id="toast"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
-const $=id=>document.getElementById(id);let months=48,mode='rate',last='';
-const num=id=>Number($(id).value);const money=n=>Math.round(n).toLocaleString('zh-TW')+' 元';
-function loan(){return num('price')-num('down')}
-function pmt(p,r,n){return r===0?p/n:p*r/(1-Math.pow(1+r,-n))}
-function solveRate(p,a,n){if(a*n<p-0.005)return null;if(Math.abs(a*n-p)<.005)return 0;let lo=0,hi=1;for(let i=0;i<180;i++){let m=(lo+hi)/2;if(pmt(p,m,n)>a)hi=m;else lo=m;}return (lo+hi)/2}
-function effectiveFromCashflow(net,a,n){if(a*n<net)return null;let r=solveRate(net,a,n);return Math.pow(1+r,12)-1}
-function updateLoan(){$('loanDisplay').textContent=money(Math.max(0,loan()))}
-function calc(){const price=num('price'),down=num('down'),principal=price-down,fee=num('fee'),n=months;if(![price,down,fee].every(Number.isFinite)||price<=0||down<0||down>=price||fee<0||fee>=principal){$('error').textContent='請確認車價、頭期款及費用，貸款金額必須大於零。';return}
-let r,a;if(mode==='rate'){let annual=num('rate');if(!Number.isFinite(annual)||annual<0||annual>100){$('error').textContent='請輸入 0～100% 的年利率。';return}r=annual/1200;a=pmt(principal,r,n)}else{a=num('payment');if(!Number.isFinite(a)||a<=0){$('error').textContent='請輸入正確的每月月付金。';return}r=solveRate(principal,a,n);if(r===null){$('error').textContent='總月付金低於貸款本金，請提高月付金或調整期數。';return}}
-const total=a*n,interest=total-principal,net=principal-fee,eff=effectiveFromCashflow(net,a,n);$('error').textContent='';
-$('heroLabel').textContent=mode==='rate'?'預估每月月付金':'反推名目年利率';$('heroValue').textContent=mode==='rate'?money(a):((r*1200).toFixed(2)+'%');$('heroSub').textContent=`${n} 期・月利率 ${(r*100).toFixed(4)}%`;
-$('nominal').textContent=(r*1200).toFixed(2)+'%';$('effective').textContent=eff===null?'—':(eff*100).toFixed(2)+'%';$('total').textContent=money(total);$('cost').textContent=money(interest+fee);$('principal').textContent=money(principal);$('downPct').textContent=(down/price*100).toFixed(1)+'%';
-last=`汽車貸款試算結果\n成交價：${money(price)}\n頭期款：${money(down)}\n貸款本金：${money(principal)}\n貸款期數：${n} 期\n每月月付金：${money(a)}\n名目年利率：${(r*1200).toFixed(2)}%\n有效年利率（含費用）：${eff===null?'無法計算':(eff*100).toFixed(2)+'%'}\n總繳款：${money(total)}\n利息及費用成本：${money(interest+fee)}`;
+(()=> {
+'use strict';
+const $=id=>document.getElementById(id);
+const before=$('before'),after=$('after'),bctx=before.getContext('2d'),actx=after.getContext('2d');
+const fileInput=$('files'); let items=[],active=-1,mode='outdoor',busy=false;
+const presets={
+ showroom:{brightness:103,contrast:112,saturation:96,warmth:2,vignette:12},
+ luxury:{brightness:101,contrast:118,saturation:94,warmth:17,vignette:22},
+ clean:{brightness:108,contrast:106,saturation:105,warmth:1,vignette:5},
+ studio:{brightness:91,contrast:132,saturation:83,warmth:-4,vignette:35},
+ silver:{brightness:102,contrast:121,saturation:82,warmth:-13,vignette:15},
+ sport:{brightness:104,contrast:125,saturation:124,warmth:0,vignette:13},
+ film:{brightness:99,contrast:112,saturation:88,warmth:11,vignette:27},
+ night:{brightness:86,contrast:137,saturation:90,warmth:-8,vignette:39},
+ bright:{brightness:118,contrast:105,saturation:108,warmth:3,vignette:3},
+ white:{brightness:111,contrast:108,saturation:92,warmth:0,vignette:4},
+ black:{brightness:96,contrast:129,saturation:88,warmth:-2,vignette:25},
+ green:{brightness:106,contrast:111,saturation:111,warmth:4,vignette:8}
+};
+let settings={...presets.showroom};
+function toast(s){$('toast').textContent=s;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2300)}
+function setSettings(s){settings={...s};Object.keys(settings).forEach(k=>{$(k).value=settings[k];$(k+'Val').textContent=settings[k]+(k==='warmth'?'':'%')});document.querySelectorAll('.preset').forEach(x=>x.classList.toggle('active',x.dataset.preset===currentPreset));renderActive()}
+let currentPreset='showroom';
+function choosePreset(name){currentPreset=name;settings={...presets[name]};Object.keys(settings).forEach(k=>{$(k).value=settings[k];$(k+'Val').textContent=settings[k]+(k==='warmth'?'':'%')});document.querySelectorAll('.preset').forEach(x=>x.classList.toggle('active',x.dataset.preset===name));renderActive();$('status').textContent='已選擇「'+document.querySelector('[data-preset="'+name+'"]').textContent+'」，全部照片共用此設定。'}
+function addFiles(files){
+ const list=[...files].filter(file=>file.type.startsWith('image/'));
+ if(!list.length){toast('請選擇圖片檔案');return;}
+ if(items.length+list.length>20){toast('最多只能加入 20 張，請先移除部分照片');return;}
+ let pending=list.length, loaded=0, failed=0;
+ list.forEach(file=>{
+  const url=URL.createObjectURL(file),img=new Image();
+  img.onload=()=>{
+   items.push({file,url,img});loaded++;pending--;
+   if(pending===0){items.sort((a,b)=>list.indexOf(a.file)-list.indexOf(b.file));if(active<0&&items.length)select(0);else{drawGallery();updateCount();renderActive();}toast('成功加入 '+loaded+' 張照片'+(failed?'，'+failed+' 張讀取失敗':''));}
+  };
+  img.onerror=()=>{failed++;pending--;URL.revokeObjectURL(url);if(pending===0){if(active<0&&items.length)select(0);else{drawGallery();updateCount();}toast('成功加入 '+loaded+' 張照片'+(failed?'，'+failed+' 張讀取失敗':''));}};
+  img.src=url;
+ });
 }
-$('terms').addEventListener('click',e=>{let b=e.target.closest('button[data-n]');if(!b)return;months=+b.dataset.n;document.querySelectorAll('#terms button').forEach(x=>x.classList.toggle('active',x===b));calc()});
-$('byRate').onclick=()=>{mode='rate';$('byRate').classList.add('active');$('byPayment').classList.remove('active');$('rateField').hidden=false;$('paymentField').hidden=true;calc()};
-$('byPayment').onclick=()=>{mode='payment';$('byPayment').classList.add('active');$('byRate').classList.remove('active');$('rateField').hidden=true;$('paymentField').hidden=false;calc()};
-['price','down','fee','rate','payment'].forEach(id=>$(id).addEventListener('input',()=>{updateLoan();calc()}));
-$('calculate').onclick=calc;$('reset').onclick=()=>{ $('price').value=800000;$('down').value=200000;$('fee').value=0;$('rate').value=5.5;$('payment').value=13955;months=48;document.querySelectorAll('#terms button').forEach(b=>b.classList.toggle('active',b.dataset.n==='48'));mode='rate';$('byRate').click();updateLoan();calc()};
-$('copy').onclick=async()=>{if(!last)calc();try{await navigator.clipboard.writeText(last);$('copy').textContent='已複製！';setTimeout(()=>$('copy').textContent='複製試算結果',1500)}catch(e){$('error').textContent='瀏覽器不允許複製，請手動選取結果。'}};
-updateLoan();calc();
-</script></body></html>
+function updateCount(){$('batchCount').textContent=items.length+' / 20 張';$('activeNo').textContent=active>=0?(active+1)+' / '+items.length:'—';$('downloadZip').disabled=!items.length||busy;$('downloadOne').disabled=active<0||busy}
+function select(i){if(i<0||i>=items.length)return;active=i;const im=items[i].img;before.width=after.width=im.naturalWidth;before.height=after.height=im.naturalHeight;bctx.clearRect(0,0,before.width,before.height);bctx.drawImage(im,0,0);before.classList.remove('hidden');after.classList.remove('hidden');$('beforeEmpty').classList.add('hidden');$('afterEmpty').classList.add('hidden');$('originalSize').textContent=im.naturalWidth+' × '+im.naturalHeight;$('outputSize').textContent='JPG PREVIEW';updateCount();drawGallery();renderActive()}
+function drawGallery(){$('gallery').innerHTML='';items.forEach((it,i)=>{const b=document.createElement('button');b.className='thumb'+(i===active?' active':'');const img=document.createElement('img');img.src=it.url;const sm=document.createElement('small');sm.textContent=(i+1)+'. '+it.file.name;b.append(img,sm);b.onclick=()=>select(i);$('gallery').appendChild(b)})}
+function renderToCanvas(img,canvas,opts){const w=img.naturalWidth,h=img.naturalHeight;canvas.width=w;canvas.height=h;const c=canvas.getContext('2d');c.save();c.filter=`brightness(${opts.brightness}%) contrast(${opts.contrast}%) saturate(${opts.saturation}%)`;c.drawImage(img,0,0,w,h);c.restore();const warm=Number(opts.warmth);if(warm!==0){c.save();c.globalCompositeOperation=warm>0?'soft-light':'multiply';c.fillStyle=warm>0?`rgba(255,${Math.max(145,220-warm)},${Math.max(95,190-warm*2)},${Math.abs(warm)/150})`:`rgba(105,160,220,${Math.abs(warm)/240})`;c.fillRect(0,0,w,h);c.restore()}const v=Number(opts.vignette)/100;if(v>0){const g=c.createRadialGradient(w/2,h/2,Math.min(w,h)*.18,w/2,h/2,Math.max(w,h)*.72);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,`rgba(0,0,0,${v})`);c.fillStyle=g;c.fillRect(0,0,w,h)}return canvas}
+function renderActive(){if(active<0||!items[active])return;renderToCanvas(items[active].img,after,settings)}
+function makeBlob(img,opts){return new Promise((resolve,reject)=>{try{const c=document.createElement('canvas');renderToCanvas(img,c,opts);c.toBlob(b=>b?resolve(b):reject(new Error('圖片匯出失敗')),'image/jpeg',.94)}catch(e){reject(e)}})}
+function safeName(s){return s.replace(/\.[^.]+$/,'').replace(/[\\/:*?"<>|]/g,'_')+'_CAR-STUDIO.jpg'}
+async function downloadCurrent(){if(active<0)return;try{$('status').textContent='正在輸出目前照片…';const blob=await makeBlob(items[active].img,settings);saveBlob(blob,safeName(items[active].file.name));$('status').textContent='目前照片已匯出。'}catch(e){toast(e.message)}}
+function saveBlob(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)}
+async function downloadBatch(){if(!items.length||busy)return;if(typeof JSZip==='undefined'){toast('ZIP 元件載入失敗，請重新整理網頁');return}busy=true;updateCount();$('progress').style.display='block';$('progressFill').style.width='0%';$('status').textContent='準備批次處理…';const zip=new JSZip();try{for(let i=0;i<items.length;i++){const blob=await makeBlob(items[i].img,settings);zip.file(String(i+1).padStart(2,'0')+'_'+safeName(items[i].file.name),blob);const pct=Math.round((i+1)/items.length*85);$('progressFill').style.width=pct+'%';$('status').textContent=`正在處理 ${i+1} / ${items.length} 張照片…`;await new Promise(r=>setTimeout(r,0))} $('status').textContent='正在壓縮 ZIP…';const content=await zip.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:5}},m=>{$('progressFill').style.width=(85+m.percent*.15)+'%'});saveBlob(content,'CAR-STUDIO-批次照片_'+new Date().toISOString().slice(0,10)+'.zip');$('status').textContent='完成！已打包 '+items.length+' 張照片。';toast('批次 ZIP 已完成下載')}catch(e){$('status').textContent='處理失敗：'+e.message;toast('批次處理失敗')}finally{busy=false;updateCount();setTimeout(()=>$('progress').style.display='none',1200)}}
+$('pick').onclick=$('add').onclick=()=>fileInput.click();fileInput.onchange=e=>{addFiles(e.target.files);fileInput.value=''};
+['dragenter','dragover'].forEach(ev=>$('drop').addEventListener(ev,e=>{e.preventDefault();$('drop').classList.add('drag')}));
+['dragleave','drop'].forEach(ev=>$('drop').addEventListener(ev,e=>{e.preventDefault();$('drop').classList.remove('drag')}));
+$('drop').addEventListener('drop',e=>addFiles(e.dataTransfer.files));
+document.querySelectorAll('.preset').forEach(b=>b.onclick=()=>choosePreset(b.dataset.preset));
+document.querySelectorAll('.mode').forEach(b=>b.onclick=()=>{document.querySelectorAll('.mode').forEach(x=>x.classList.toggle('active',x===b));mode=b.dataset.mode;choosePreset(mode==='outdoor'?'clean':'studio')});
+Object.keys(settings).forEach(k=>$(k).addEventListener('input',()=>{settings[k]=Number($(k).value);$(k+'Val').textContent=settings[k]+(k==='warmth'?'':'%');currentPreset='';document.querySelectorAll('.preset').forEach(x=>x.classList.remove('active'));renderActive();$('status').textContent='手動調整已同步套用至整批照片。'}));
+$('reset').onclick=()=>choosePreset(mode==='outdoor'?'showroom':'studio');
+$('sync').onclick=()=>{renderActive();$('status').textContent='目前設定已套用至全部 '+items.length+' 張照片。';toast('已同步全部照片，下載 ZIP 即可取得成品')};
+$('downloadOne').onclick=downloadCurrent;$('downloadZip').onclick=downloadBatch;
+$('remove').onclick=()=>{if(active<0)return;URL.revokeObjectURL(items[active].url);items.splice(active,1);if(!items.length){active=-1;before.classList.add('hidden');after.classList.add('hidden');$('beforeEmpty').classList.remove('hidden');$('afterEmpty').classList.remove('hidden');$('gallery').innerHTML=''}else{active=Math.min(active,items.length-1);select(active)}updateCount()};
+$('clear').onclick=()=>{items.forEach(x=>URL.revokeObjectURL(x.url));items=[];active=-1;before.classList.add('hidden');after.classList.add('hidden');$('beforeEmpty').classList.remove('hidden');$('afterEmpty').classList.remove('hidden');$('gallery').innerHTML='';updateCount();toast('已清空照片清單')};
+updateCount();choosePreset('showroom');
+})();
+</script>
+</body>
+</html>
